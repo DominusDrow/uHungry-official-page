@@ -1,0 +1,50 @@
+---
+import Showcase from '../assets/screen1.jpeg'
+import Cursor from '../assets/cursor.svg'
+---
+
+
+<section class="product-hero">
+    <div class="container">
+       <div class="row">
+           <div class="one-half column">
+              <div class="d-cell">
+               <h1 class="h1-title">Conectando atraves de la <span>comida.</span></h1>
+               <div class="content">
+                   <p>uHungry es una aplicación para hacer encargos de comida a particulares </p>
+                   <a href="#" class="button button-primary lg">Descargar</a>
+               </div>
+              </div>
+           </div>
+           <div class="one-half column hero-media">
+               <img src={Showcase} class="u-full-width" alt="Hero illustrator">
+               <img src={Cursor} alt="Cursor icon">
+           </div>
+       </div>
+    </div>
+   </section>
+
+   <style lang="scss">
+
+    .product-hero{
+        padding: 50px 0;
+        .one-half{
+            display: table;
+            height: 400px;
+            margin-bottom: 40px;
+            .d-cell{
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+    .hero-media{
+        position: relative;
+        img:not(.u-full-width){
+            width: 80px;
+            position: absolute;
+            left: 20px;
+            bottom: 0;
+        }
+      }
+    }
+   </style>

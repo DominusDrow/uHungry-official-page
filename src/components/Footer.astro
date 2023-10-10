@@ -1,0 +1,40 @@
+---
+import Start from '../assets/start.svg'
+---
+
+<footer>
+    <div class="container">
+      <div class="flex">
+        <a href="#">Help</a>
+        <a href="#">FAQ</a>
+        <a href="#">Privacy</a> <a href="#">Discord</a>
+      </div>
+      <div class="center">
+        <a href="#">
+          <img src={Start} alt="">
+        </a>
+      </div>
+    </div>
+</footer>
+
+<style lang="scss">
+
+footer{
+  padding: 50px;
+}
+
+.flex{
+  justify-content: center;
+  padding: 50px 10px;
+  a{
+    padding: 20px;
+    color: #111;
+    text-decoration: none;
+    font-size: 2rem;
+  }
+}
+
+img{
+    width: 200px;
+  }
+</style>

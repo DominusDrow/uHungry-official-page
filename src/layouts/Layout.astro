@@ -1,0 +1,87 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+        <meta name="description" content="Astrobrew is a free and open-source elegant landing page for Micro SaaS products built with Astro & Skeleton CSS"/>
+		<title>{title}</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+        
+        <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="d2OuR1c" data-description="Support me on Buy me a coffee!" data-message="Thanks for visiting! If you like my work, support me with a beer. I'll appreciate that. Cheers!" data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style lang="scss" is:global>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+
+:root{
+    --accent: #CA555D;
+    --tenary: #8574EB;
+}
+
+body, html{
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    margin: 0px;
+    overflow-x: hidden;
+}
+.block{
+    display: block;
+}
+.h1-title, .h2-title{
+    font-weight: 700;
+}
+.h1-title{
+    font-size: 4.2rem;
+}
+.h2-title{
+    font-size: 3rem;
+}
+.h3-title{
+    font-size: 2.5rem;
+}
+
+.text-container{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.center{
+    text-align: center;
+}
+
+.button{
+    border-radius: 40px;
+    text-transform: none;
+    font-weight: 500;
+    font-size: 1.4rem;
+    &.button-primary{
+        background-color: var(--accent);
+        border-color: var(--accent);
+    }
+    &.lg{
+        height: 50px;
+        line-height: 48px;
+    }
+}
+.flex{
+    display: flex;
+}
+section.padded{
+    padding: 70px 0;
+}
+</style>

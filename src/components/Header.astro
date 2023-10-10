@@ -1,0 +1,59 @@
+---
+import Logo from '../assets/logobanner.jpeg'
+---
+
+
+<header>
+    <nav class="container">
+        <div class="nav-logo">
+            <a href=" ">
+                <img src={Logo} alt="brand logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#customers">Customers</a>
+            <a href="#">Instagram</a>
+        </div>
+        <div class="nav-cta">
+            <a href="#">Login</a>
+            <a href="#" class="button button-primary">Descargar</a>
+        </div>
+    </nav>
+</header>
+
+
+<style lang="scss">
+nav{
+    position: relative;
+    display: grid;
+    grid-template-columns: 12% 55% 30%;
+    top: 10px;
+    .nav-cta{
+       text-align: right;
+    }
+    .nav-links{
+        margin-top:2px;
+    }
+    a:not(.button){
+        padding: 0 10px;
+        color: #333;
+        text-decoration: none;
+        img{
+            width: 90px;
+            margin-left: -6px;
+            margin-top: 2px;
+        }
+    }
+
+    @media (max-width:700px) {
+        grid-template-columns: 30% 70%;
+        .nav-logo img{
+            margin-top: 7px;
+        }
+        .nav-links{
+            display: none;
+        }
+    }
+}
+</style>
