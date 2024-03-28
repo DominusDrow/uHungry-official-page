@@ -1,27 +1,61 @@
 ---
 import Showcase from '../assets/showcase-two.svg'
-
+import vector3 from '../assets/vector3.png'
 ---
+<input type="checkbox" id="toggle" class="toggle-input">
+<label for="toggle" class="toggle-label"></label>
+
+<section class="title-section">
+    <p>Usuario</p>
+    <p class="admin">Vendedor</p>
+</section>
 
 
-<section class="product-defined padded">
-    <div class="container">
-         <div class="row product-brief-items">
-            <div class="brief-tab one-half column">
-                <h3 class="h1-title">Spark growth and engagement</h3>
-                <p class="m-paragraph m-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
-                <ol class="row">
-                    <li class="one-third column"><a href="#">Install extention</a></li>
-                    <li class="one-third column"><a href="#">Use any search filter</a></li>
-                    <li class="one-third column"><a href="#">Automate everything</a></li>
-                </ol>
-            </div>
-            <div class="brief-media center one-half column">
-                <img src={Showcase} alt="Showcase mockup">
+<section id="section1" class="product-defined padded active">
+    <!-- Contenido de la primera sección -->
+    <section class="product-defined padded">
+        <div class="container">
+             <div class="row product-brief-items">
+                <div class="brief-tab one-half column">
+                    <h3 class="h1-title">¿Comó instalarla?</h3>
+                    <p class="m-paragraph m-margin">Sigue cada uno de estos sencillos pasos para poder hacer uso de nuestra aplicación.</p>
+                    <ol class="row">
+                        <li class="one-third column"><a href="#">Instala la aplicación desde tu tienda de aplicaciones</a></li>
+                        <li class="one-third column"><a href="#">Registrate usando tu correo institucional</a></li>
+                        <li class="one-third column"><a href="#">Listo, ahora eres usuario de uHungry?</a></li>
+                    </ol>
+                </div>
+                <div class="brief-media center one-half column">
+                    <img src={Showcase} alt="Showcase mockup">
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 </section>
+
+<section id="section2" class="product-defined padded">
+    <!-- Contenido de la segunda sección -->
+    <section class="product-defined padded">
+        <div class="container">
+             <div class="row product-brief-items">
+                <div class="brief-tab one-half column">
+                    <h3 class="h1-title">¿Comó instalarla?</h3>
+                    <p class="m-paragraph m-margin">Sigue cada uno de estos sencillos pasos para poder hacer uso de nuestra aplicación.</p>
+                    <ol class="row">
+                        <li class="one-third column"><a href="#">Instala la aplicación desde tu tienda de aplicaciones</a></li>
+                        <li class="one-third column"><a href="#">Registrate usando tu cuenta de google</a></li>
+                        <li class="one-third column"><a href="#">Registra tu negocio</a></li>
+                        <li class="one-third column"><a href="#">Listo, bienvenido a uHungry?</a></li>
+                    </ol>
+                </div>
+                <div class="brief-media center one-half column">
+                    <img src={Showcase} alt="Showcase mockup">
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
 
 
 <style lang="scss">
@@ -80,5 +114,77 @@ import Showcase from '../assets/showcase-two.svg'
             }
         }
     }
+
+
   }
+
+/* Estilo del toggle switch */
+.toggle-input {
+    display: none;
+    opacity: 0;
+}
+
+.toggle-label {
+    display: block;
+    width: 60px;
+    height: 30px;
+    background-color: #3e7afc;
+    border-radius: 15px;
+    position: absolute;
+    top: 1700px; /* Ajusta según sea necesario para colocarlo justo encima de las secciones */
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.toggle-label:before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.toggle-input:checked + .toggle-label:before {
+    transform: translateX(30px);
+}
+
+/* Ocultar la segunda sección por defecto */
+#section2 {
+    display: none;
+}
+
+/* Mostrar la segunda sección si el toggle está activado */
+.toggle-input:checked ~ #section2 {
+    display: block;
+}
+
+/* Ocultar la primera sección si el toggle está activado */
+.toggle-input:checked ~ #section1 {
+    display: none;
+}
+
+.title-section p {
+    font-size: 25px; /* Tamaño de la fuente */
+    color: rgb(44, 44, 44); /* Color del texto */
+
+    /* Estilos para posicionar el texto en un lugar específico de la pantalla */
+    position: absolute; /* Establece la posición absoluta */
+    top: 1698px; /* Distancia desde la parte superior */
+    left: 45%; /* Alinea el texto en el centro horizontalmente */
+    transform: translateX(-50%); /* Centra el texto horizontalmente */
+}
+
+.title-section .admin {
+    font-size: 25px; /* Tamaño de la fuente */
+    color: rgb(44, 44, 44); /* Color del texto */
+
+    /* Estilos para posicionar el texto en un lugar específico de la pantalla */
+    position: absolute; /* Establece la posición absoluta */
+    top: 1698px; /* Distancia desde la parte superior */
+    left: 56%; /* Alinea el texto en el centro horizontalmente */
+    transform: translateX(-50%); /* Centra el texto horizontalmente */
+}
 </style>

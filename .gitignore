@@ -1,0 +1,16 @@
+# Entornos virtuales de Python
+venv/
+.env/
+ 
+# Archivos de caché y directorios generados
+__pycache__/
+.cache/
+.ipynb_checkpoints/
+ 
+# Archivos generados por herramientas de compilación
+/build/
+/dist/
+*.egg-info/
+ 
+# Archivos generados por Astro
+catalogs/

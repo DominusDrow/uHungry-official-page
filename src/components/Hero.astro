@@ -1,6 +1,9 @@
 ---
-import Showcase from '../assets/screen1.jpeg'
-import Cursor from '../assets/cursor.svg'
+import Showcase from '../assets/launchScreen.png'
+import vector from '../assets/vector.png'
+import vector1 from '../assets/vector1.png'
+import vector3 from '../assets/vector3.png'
+import google from '../assets/badge.png'
 ---
 
 
@@ -9,34 +12,38 @@ import Cursor from '../assets/cursor.svg'
        <div class="row">
            <div class="one-half column">
               <div class="d-cell">
-               <h1 class="h1-title">Conectando atraves de la <span>comida.</span></h1>
+               <h1 class="h1-title">Conectando a tráves de la <span>comida.</span></h1>
                <div class="content">
-                   <p>uHungry es una aplicación para hacer encargos de comida a particulares </p>
-                   <a href="#" class="button button-primary lg">Descargar</a>
+                   <p>Nosotros somos uHungry? </p>
+                   <p>uHungry? es una aplicación que simplifica la compra de comida entre particulares o puestos ambulantes. 
+                     Conecta a la comunidad estudiantil y al público en general, permitiéndoles comprar y vender alimentos de forma segura. 
+                     Lo que nos hace únicos es que cada vendedor tiene un apartado llamado "causa", donde explican por qué venden comida, ya sea para financiar estudios,
+                     apoyar una causa benéfica, emprender un negocio o por pasión. Esto crea conexiones auténticas y significativas entre compradores y vendedores.</p>
+                    <a href="#" class="google-play-button"></a>
                </div>
               </div>
            </div>
            <div class="one-half column hero-media">
-               <img src={Showcase} class="u-full-width" alt="Hero illustrator">
-               <img src={Cursor} alt="Cursor icon">
-           </div>
+               <img src={Showcase} class="u-full-width" alt="Hero illustrator"  style="position: absolute; width: 80%; ">
+               
        </div>
     </div>
-   </section>
+</section>
 
-   <style lang="scss">
+<style lang="scss">
 
-    .product-hero{
-        padding: 50px 0;
-        .one-half{
-            display: table;
-            height: 400px;
-            margin-bottom: 40px;
-            .d-cell{
-                display: table-cell;
-                vertical-align: middle;
-            }
+.product-hero{
+    padding: 50px 0;
+    margin-bottom: 200px; 
+    .one-half{
+        display: table;
+        height: 400px;
+        margin-bottom: 40px;
+        .d-cell{
+            display: table-cell;
+            vertical-align: middle;
         }
+    }
     .hero-media{
         position: relative;
         img:not(.u-full-width){
@@ -46,5 +53,26 @@ import Cursor from '../assets/cursor.svg'
             bottom: 0;
         }
       }
-    }
-   </style>
+      .resized-image {
+            width: 70%;
+            height: auto;
+        }
+}
+
+.google-play-button {
+  display: inline-block;
+  width: 180px; 
+  height: 180px; 
+  background-image: url('../assets/badge.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.google-play-button:hover {
+  opacity: 0.8; 
+}
+
+
+
+</style>

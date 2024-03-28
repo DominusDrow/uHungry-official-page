@@ -1,5 +1,5 @@
 ---
-import Logo from '../assets/logobanner.jpeg'
+import Logo from '../assets/banner.png'
 ---
 
 
@@ -7,17 +7,12 @@ import Logo from '../assets/logobanner.jpeg'
     <nav class="container">
         <div class="nav-logo">
             <a href=" ">
-                <img src={Logo} alt="brand logo">
+                <img src={Logo} alt="brand logo" style="position: absolute; right: 950px; width: 14%;">
             </a>
         </div>
         <div class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#customers">Customers</a>
-            <a href="#">Instagram</a>
-        </div>
-        <div class="nav-cta">
-            <a href="#">Login</a>
-            <a href="#" class="button button-primary">Descargar</a>
+            <a href="https://www.facebook.com/profile.php?id=61550883294798&mibextid=JRoKGi" style="color: #494949; text-decoration: none; ">Facebook</a>
+            <a href="https://www.instagram.com/uhungryoficial?igsh=MTBlM3hkd3VxNXl5eA%3D%3D&utm_source=qr" style="color: #494949; text-decoration: none;">Instagram</a>
         </div>
     </nav>
 </header>
@@ -34,10 +29,11 @@ nav{
     }
     .nav-links{
         margin-top:2px;
+        margin-right: 40px;
     }
     a:not(.button){
         padding: 0 10px;
-        color: #333;
+        color: #494949;
         text-decoration: none;
         img{
             width: 90px;
@@ -46,6 +42,10 @@ nav{
         }
     }
 
+    .button:hover {
+        background-color: #4ca2f8 !important;
+    }
+    
     @media (max-width:700px) {
         grid-template-columns: 30% 70%;
         .nav-logo img{

@@ -1,59 +1,113 @@
 ---
-import FeatureOne from '../assets/object-one.svg'
-import FeatureTwo from '../assets/object-two.svg'
-import FeatureThree from '../assets/object-three.svg'
+import logo from '../assets/logo1.png'
 ---
+<section class="container about" id="aqui">
+    <div class="mission-container">
+        <h2 class="subtitle"><b>Misión.</b></h2>
+        <p class="about__paragraph">Ser la plataforma líder en la solicitud de comida dentro de los campus universitarios, proporcionando una experiencia conveniente y eficiente para estudiantes y personal universitario, a través de la innovación tecnológica y la colaboración continua con la comunidad.</p>
+        <img src={logo} alt="Hero illustrator">
+    </div>
+</section>
 
-
-
-<section class="solutions" id="features">
-    <div class="container">
-      
-        <div class="row">
-            <div class="sol-wrap one-third column">
-                <div class="sol-media m-margin">
-                    <img src={FeatureOne} alt="Prospect">
-                </div>
-                <h3 class="h3-title">Prospect</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere velit ullam maxime veritatis,  possimus.</p>
-            </div>
-            <div class="sol-wrap one-third column">
-                <div class="sol-media m-margin">
-                    <img src={FeatureTwo} alt="Marketing">
-                </div>
-                <h3 class="h3-title">Marketing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere velit ullam maxime veritatis,  possimus.</p>
-            </div>
-            <div class="sol-wrap one-third column">
-                <div class="sol-media  m-margin">
-                    <img src={FeatureThree} alt="Automation">
-                </div>
-                <h3 class="h3-title">Automation</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere velit ullam maxime veritatis,  possimus.</p>
-            </div>
-        </div>
+<section class="container about" id="aqui">   
+    <div class="vision-container">
+        <h2 class="subtitle"><b>Visión.</b></h2>
+        <p class="about__paragraph">Facilitar y agilizar el proceso de solicitud y entrega de comida en el campus universitario, ofreciendo una amplia gama de opciones de alimentos y garantizando una experiencia satisfactoria para nuestros usuarios.</p>
+        <img src={logo} alt="Hero illustrator">
     </div>
 </section>
 
 
 <style lang="scss">
-    .solutions{
-        .container{
-            background-color: var(--tenary);
-            border-radius: 40px;
-            padding: 40px;
-        }
-        h3, p{
-            color: #fff;
-        }
-        img{
-            width: 150px;
-        }
-    @media (max-width:700px) {
-        text-align: center;
-        .sol-wrap{
-            padding: 30px;
-        }
-    }
+/* About */
+.about {
+    text-align: center;
+    margin-top: 100px;
 }
+
+.subtitle {
+    color: #ffffff;
+    font-size: 5rem;
+    margin-bottom: 25px;
+}
+
+.about__paragraph {
+    line-height: 1.7;
+    color: #ffffff;
+}
+
+.about__main {
+    padding-top: 80px;
+    display: flex; 
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+}
+
+.about__icons {
+    display: grid;
+    gap: 1em;
+    justify-items: center;
+    width: 260px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.about__icon {
+    width: 100px;
+}
+
+.mission-container {
+    border: 4px solid; 
+    border-radius: 15px; 
+    padding: 20px;
+    margin-bottom: 50px; 
+    width: 90%; 
+    max-width: 1000px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto; 
+    background-image: url('../assets/people.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+
+.mission-container img {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 7%;
+}
+
+.vision-container {
+    border: 4px solid; 
+    border-radius: 15px; 
+    padding: 20px;
+    margin-bottom: 50px;
+    width: 90%; 
+    max-width: 1000px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto; 
+    background-image: url('../assets/people.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+
+.vision-container img {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 7%;
+}
+
 </style>

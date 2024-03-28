@@ -1,32 +1,99 @@
 ---
 import Few from '../assets/few.svg'
+import leftarrow from '../assets/leftarrow.svg'
+import rightarrow from '../assets/rightarrow.svg'
+import ambulante from '../assets/ambulante.jpg'
+import cafeteria from '../assets/cafeteria.jpg'
+import puesto from '../assets/puesto.jpg'
 ---
+<section class="title-section">
+    <h1><b>¿Que puedes encontrar en nuestra app?</b></h1>
+</section>
 
-<section class="fine-section padded" id="customers">
-    <div class="container">
+<section class="testimony">
+    <div class="testimony__container container">
+        <img src={leftarrow} alt="flecha" class="testimony__arrow" id="before">
 
-        <div class="arrow-image">
-            <img src={Few}>
-        </div>
-
-        <div class="testimony">
-            <div class="flex">
-                <div class="customer-pic">
-                    <div class="circular-image">
-                        <img src="https://images.pexels.com/photos/3756985/pexels-photo-3756985.jpeg?auto=compress&cs=tinysrgb&w=800">
-                    </div>
-                </div>
-                <div class="customer-testimony">
-                    <h4 class="h3-title">"I’ve been a happy Astrobrew customer since 2018. Then and now, Plutio has helped me keep my projects organized and effortless. My clients love it too - they feel more important and involved than ever before."</h4>
-                    <p>Claire Rick, Lead Developer @Slack</p>
-                </div>
+        <section class="testimony__body testimony__body--show" data-id="1">
+            <div class="testimony__texts">
+                <h2 class="subtitle">Cafeterías <span class="testimony__course">Dentro
+                        de Ciudad Universitaria.</span></h2>
+                <p class="testimony__review">En está aplicación podrás comprar y consultar precios de todas las 
+                    cafeterías que se encuentren dentro de C.U.
+                </p>
             </div>
-        </div>
+
+            <figure class="testimony__picture">
+                <img src={cafeteria} class="testimony__img">
+            </figure>
+        </section>
+
+        <section class="testimony__body" data-id="2">
+            <div class="testimony__texts">
+                <h2 class="subtitle">Puestos <span class="testimony__course">En el
+                        pabellón Universitario.</span></h2>
+                <p class="testimony__review">En está aplicación podrás encontrar de manera sencilla a todos los estudiantes que tienen un puesto
+                    en el pabellón universitario, podrás consultar lo que venden y los diversos precios que ofrecen.
+                </p>
+            </div>
+
+            <figure class="testimony__picture">
+                <img src={puesto} class="testimony__img">
+            </figure>
+        </section>
+
+        <section class="testimony__body" data-id="3">
+            <div class="testimony__texts">
+                <h2 class="subtitle">Comerciantes Ambulantes <span class="testimony__course">Estudiantes.</span></h2>
+                <p class="testimony__review">En está aplicación podrás ver lo que ofrece la comunidad estudiantil,
+                    tanto los que venden comida y no puedierón conseguir un lugar en el pabellón, como los que están
+                    iniciando un emprendimiento.
+                </p>
+            </div>
+
+            <figure class="testimony__picture">
+                <img src={ambulante} class="testimony__img">
+            </figure>
+        </section>
 
 
-      
+        <img src={rightarrow} alt="flechita" class="testimony__arrow" id="next">
     </div>
-</section> 
+</section>
+
+<script>
+    (function(){
+        
+        const sliders = [...document.querySelectorAll('.testimony__body')];
+        const buttonNext = document.querySelector('#next');
+        const buttonBefore = document.querySelector('#before');
+        let value;   
+
+        buttonNext.addEventListener('click', ()=>{
+            changePosition(1);
+        });
+
+        buttonBefore.addEventListener('click', ()=>{
+            changePosition(-1);
+        });
+
+        const changePosition = (add)=>{
+            const currentTestimony = document.querySelector('.testimony__body--show').dataset.id;
+            value = Number(currentTestimony);
+            value+= add;
+
+
+            sliders[Number(currentTestimony)-1].classList.remove('testimony__body--show');
+            if(value === sliders.length+1 || value === 0){
+                value = value === 0 ? sliders.length  : 1;
+            }
+
+            sliders[value-1].classList.add('testimony__body--show');
+
+        }
+
+    })();
+</script>
 
 <style lang="scss">
 
@@ -81,5 +148,67 @@ import Few from '../assets/few.svg'
         }
     }
  }
+
+/* Testimony */
+
+.testimony{
+    background-color: #0e70cc9f;
+}
+
+.testimony__container{
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    gap: 1em;
+    align-items: center;
+}
+
+
+
+.testimony__body{
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.testimony__body--show{
+    pointer-events: unset;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.testimony__img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.testimony__texts{
+    max-width: 700px;
+}
+
+.testimony__course{
+    background-color: rgb(230, 157, 157);
+    color: #fff;
+    display: inline-block;
+    padding: 5px;
+}
+
+.testimony__arrow{
+    width: 90%;
+    cursor: pointer;
+}
+
+.title-section {
+    text-align: center;
+}
 
 </style>
