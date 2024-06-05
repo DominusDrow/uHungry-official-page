@@ -15,5 +15,8 @@
   },
   "devDependencies": {
     "sass": "^1.63.6"
+  },
+  "script":{
+    "build": "astro build"
   }
 }

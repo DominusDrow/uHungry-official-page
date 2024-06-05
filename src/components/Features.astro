@@ -1,34 +1,42 @@
 ---
 import logo from '../assets/logo1.png'
 ---
-<section class="container about" id="aqui">
+<section class="container about centered" id="aqui">
     <div class="mission-container">
         <h2 class="subtitle"><b>Misión.</b></h2>
-        <p class="about__paragraph">Ser la plataforma líder en la solicitud de comida dentro de los campus universitarios, proporcionando una experiencia conveniente y eficiente para estudiantes y personal universitario, a través de la innovación tecnológica y la colaboración continua con la comunidad.</p>
-        <img src={logo} alt="Hero illustrator">
+        <p class="about__paragraph">Ser la mejor opción para el emprendimiento estudiantil dentro de la universidad, brindando visibilidad y apoyo a los estudiantes que buscan generar ingresos adicionales mediante la venta de productos o servicios. Nuestra misión es proporcionar una plataforma innovadora y eficiente que facilite la conexión entre estos emprendedores y la comunidad universitaria, fomentando así el crecimiento personal, académico y económico de nuestros estudiantes a través de la colaboración continua.</p>
+        <img src={logo} alt="Hero illustrator" class="logo">
     </div>
 </section>
 
-<section class="container about" id="aqui">   
+<section class="container about centered" id="aqui">   
     <div class="vision-container">
         <h2 class="subtitle"><b>Visión.</b></h2>
-        <p class="about__paragraph">Facilitar y agilizar el proceso de solicitud y entrega de comida en el campus universitario, ofreciendo una amplia gama de opciones de alimentos y garantizando una experiencia satisfactoria para nuestros usuarios.</p>
-        <img src={logo} alt="Hero illustrator">
+        <p class="about__paragraph">Nuestra visión es crear un ecosistema donde cada estudiante tenga la oportunidad de desarrollar y promover sus proyectos emprendedores, contribuyendo así al desarrollo integral de la comunidad estudiantil.</p>
+        <img src={logo} alt="Hero illustrator" class="logo">
     </div>
 </section>
+
 
 
 <style lang="scss">
 /* About */
 .about {
     text-align: center;
-    margin-top: 100px;
+    margin-bottom: 100px;
 }
+
+.about.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .subtitle {
     color: #ffffff;
-    font-size: 5rem;
-    margin-bottom: 25px;
+    font-size: 3vw;
+    margin-bottom: 2vw;
 }
 
 .about__paragraph {
@@ -37,7 +45,7 @@ import logo from '../assets/logo1.png'
 }
 
 .about__main {
-    padding-top: 80px;
+    padding-top: 8vw;
     display: flex; 
     justify-content: space-around; 
     flex-wrap: wrap; 
@@ -47,67 +55,57 @@ import logo from '../assets/logo1.png'
     display: grid;
     gap: 1em;
     justify-items: center;
-    width: 260px;
+    width: 80%;
     overflow: hidden;
     margin: 0 auto;
 }
 
 .about__icon {
-    width: 100px;
+    width: 30%;
 }
 
-.mission-container {
-    border: 4px solid; 
-    border-radius: 15px; 
-    padding: 20px;
-    margin-bottom: 50px; 
-    width: 90%; 
-    max-width: 1000px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto; 
-    background-image: url('../assets/people.jpg');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
+/* Elimina las posiciones absolutas de las imágenes dentro de .mission-container y .vision-container */
+.mission-container img,
+.vision-container img {
+    position: relative; /* Cambiado de absolute a relative */
+    width: 7%; /* Puedes ajustar el tamaño según necesites */
 }
 
-
-.mission-container img {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    width: 7%;
-}
-
+/* Elimina las posiciones absolutas y ajusta el fondo de las secciones .mission-container y .vision-container */
+.mission-container,
 .vision-container {
     border: 4px solid; 
     border-radius: 15px; 
-    padding: 20px;
-    margin-bottom: 50px;
-    width: 90%; 
-    max-width: 1000px; 
+    padding: 2vw;
+    margin-bottom: 5vw;
+    width: 90%;
+    max-width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
+    position: relative; /* Cambiado de absolute a relative */
     overflow: hidden;
-    margin: 0 auto; 
+    margin: 0 auto; /* Para centrar horizontalmente */
     background-image: url('../assets/people.jpg');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center; /* Añadir esta propiedad para centrar verticalmente */
 }
 
+/* Añade una consulta de medios para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .mission-container,
+    .vision-container {
+        width: 90%; /* Ajusta el ancho según sea necesario */
+        max-width: 90%;
+        padding: 5vw; /* Ajusta el relleno según sea necesario */
+    }
 
-.vision-container img {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    width: 7%;
+    .mission-container img,
+    .vision-container img {
+        width: 15%; /* Ajusta el tamaño de la imagen según sea necesario */
+    }
 }
 
 </style>

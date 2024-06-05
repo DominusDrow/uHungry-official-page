@@ -1,18 +1,13 @@
 ---
-import Showcase from '../assets/showcase-two.svg'
-import vector3 from '../assets/vector3.png'
+import user from '../assets/usuario.jpeg'
+import admin from '../assets/admin.jpeg'
+
 ---
 <input type="checkbox" id="toggle" class="toggle-input">
 <label for="toggle" class="toggle-label"></label>
 
-<section class="title-section">
-    <p>Usuario</p>
-    <p class="admin">Vendedor</p>
-</section>
-
-
 <section id="section1" class="product-defined padded active">
-    <!-- Contenido de la primera sección -->
+    <p class="h1-title user-title">Usuario</p>
     <section class="product-defined padded">
         <div class="container">
              <div class="row product-brief-items">
@@ -20,13 +15,14 @@ import vector3 from '../assets/vector3.png'
                     <h3 class="h1-title">¿Comó instalarla?</h3>
                     <p class="m-paragraph m-margin">Sigue cada uno de estos sencillos pasos para poder hacer uso de nuestra aplicación.</p>
                     <ol class="row">
-                        <li class="one-third column"><a href="#">Instala la aplicación desde tu tienda de aplicaciones</a></li>
-                        <li class="one-third column"><a href="#">Registrate usando tu correo institucional</a></li>
-                        <li class="one-third column"><a href="#">Listo, ahora eres usuario de uHungry?</a></li>
+                        <li class="one-third column"><a href="#">Presiona el botón de arriba o entra a Google Play y descarga la app.</a></li>
+                        <li class="one-third column"><a href="#">Al iniciar la app selecciona la opción "usuario".</a></li>
+                        <li class="one-third column"><a href="#">Registrate usando tu correo institucional y acepta el aviso.</a></li>
+                        <li class="one-third column"><a href="#">Listo, ahora eres usuario de uHungry?.</a></li>
                     </ol>
                 </div>
                 <div class="brief-media center one-half column">
-                    <img src={Showcase} alt="Showcase mockup">
+                    <img src={user} alt="Showcase mockup" style="width: 100%; max-width: 330px; margin-top: 50px; margin-right: 20px;">
                 </div>
             </div>
         </div>
@@ -34,7 +30,7 @@ import vector3 from '../assets/vector3.png'
 </section>
 
 <section id="section2" class="product-defined padded">
-    <!-- Contenido de la segunda sección -->
+    <p class="h1-title admin-title">Vendedor</p>
     <section class="product-defined padded">
         <div class="container">
              <div class="row product-brief-items">
@@ -42,14 +38,16 @@ import vector3 from '../assets/vector3.png'
                     <h3 class="h1-title">¿Comó instalarla?</h3>
                     <p class="m-paragraph m-margin">Sigue cada uno de estos sencillos pasos para poder hacer uso de nuestra aplicación.</p>
                     <ol class="row">
-                        <li class="one-third column"><a href="#">Instala la aplicación desde tu tienda de aplicaciones</a></li>
-                        <li class="one-third column"><a href="#">Registrate usando tu cuenta de google</a></li>
-                        <li class="one-third column"><a href="#">Registra tu negocio</a></li>
-                        <li class="one-third column"><a href="#">Listo, bienvenido a uHungry?</a></li>
+                        <li class="one-third column"><a href="#">Presiona el botón de arriba o entra a Google Play y descarga la app.</a></li>
+                        <li class="one-third column"><a href="#">Al iniciar la app selecciona la opción "Administrador de cafe".</a></li>
+                        <li class="one-third column"><a href="#">Registrate usando tu cuenta de google y acepta el aviso.</a></li>
+                        <li class="one-third column"><a href="#">Registra tu negocio.</a></li>
+                        <li class="one-third column"><a href="#">Registra tú producto.</a></li>
+                        <li class="one-third column"><a href="#">Listo, gracias por unirte a uHungry?.</a></li>
                     </ol>
                 </div>
                 <div class="brief-media center one-half column">
-                    <img src={Showcase} alt="Showcase mockup">
+                    <img src={admin} alt="Showcase mockup" style="width: 100%; max-width: 330px; margin-top: 50px; margin-right: 20px;">
                 </div>
             </div>
         </div>
@@ -60,63 +58,81 @@ import vector3 from '../assets/vector3.png'
 
 <style lang="scss">
 
-.product-defined{  
-    .brief-media img{
-      width: 400px;
-      @media (max-width:700px) {
-        width: 300px;
-      }
-    }
-    .brief-tab{
-        padding-top: 50px;
-    }
-    ol{
-        counter-reset: step;
+.product-defined {
+    .brief-media {
+        text-align: center;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
         align-items: center;
+    }
+
+    .brief-media img {
+        width: 80%;
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .brief-tab {
+        padding-top: 2vw;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    ol {
+        display: flex;
+        flex-wrap: wrap;
+        counter-reset: step;
         list-style: none;
-        >li{
-            padding-left: 40px;
+        padding: 0;
+        margin: 0;
+        > li {
+            flex: 0 0 100%;
+            padding-left: 5vw;
             position: relative;
-            &::before{
+            margin-bottom: 4rem; /* Agregar espacio entre elementos de la lista */
+            &::before {
                 counter-increment: step;
                 content: counter(step);
-                width: 26px;
-                height: 26px;
+                width: 1.5vw;
+                height: 1.5vw;
                 position: absolute;
-                left: 0;
-                top: 50%;
-                margin-top: -13px;
+                left: 0%;
+                bottom: 30%;
+                margin-top: 1vw;
                 text-align: center;
-                font-size: 13px;
+                font-size: 1vw;
                 line-height: 1.8em;
-                border: 2px solid #000;
+                border: 0.3vw solid #000;
                 font-weight: 700;
-                border-radius: 8px;
+                border-radius: 50%;
             }
-            a{
+            a {
                 text-decoration: none;
                 color: #000;
+                font-size: 1vw; /* Tamaño de fuente ajustado para dispositivos móviles */
             }
         }
-        @media (max-width:700px) {
-            gap: 10px;
-            .column{
-                width: 33%;
-                padding-left: 30px;
-                &::before{
-                    width: 18px;
-                    height: 18px;
-                    font-size: 10px;
+
+        @media only screen and (max-width: 768px) {
+            > li {
+                &::before {
+                    font-size: 3vw; /* Ajuste de tamaño de fuente para dispositivos móviles en media query */
+                    width: 5vw;
+                    height: 5vw;
+                    left: -2%;
                 }
-                a{
-                    font-size: 1.3rem;
+                a {
+                    font-size: 3vw; /* Ajuste de tamaño de fuente para dispositivos móviles en media query */
                 }
             }
         }
     }
+}
 
 
-  }
+
 
 /* Estilo del toggle switch */
 .toggle-input {
@@ -125,36 +141,54 @@ import vector3 from '../assets/vector3.png'
 }
 
 .toggle-label {
-    display: block;
-    width: 60px;
-    height: 30px;
-    background-color: #3e7afc;
-    border-radius: 15px;
-    position: absolute;
-    top: 1700px; /* Ajusta según sea necesario para colocarlo justo encima de las secciones */
-    left: 50%;
-    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 225px;
+    height: 80px;
+    background-image: url('../assets/user.png'); /* Imagen para el estado activo */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 70% center;
+    background-color: #e6e6e6e1;
+    border-radius: 40px;
+    position: relative;
     cursor: pointer;
+    left: 50%; 
+    transform: translateX(-50%);
+    border: 2px solid #000; /* Agregar borde al slider */ 
+    top: 100px;
+    transition: background-image 0.8s ease;
 }
 
 .toggle-label:before {
     content: '';
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 75px;
+    height: 75px;
     background-color: #ffffff;
     border-radius: 50%;
-    transition: transform 0.2s ease;
+    transition: transform 0.8s ease;
+    left: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Aspecto de sombra */
 }
 
 .toggle-input:checked + .toggle-label:before {
-    transform: translateX(30px);
+    transform: translateX(150px);
 }
 
-/* Ocultar la segunda sección por defecto */
-#section2 {
-    display: none;
+.toggle-input:checked + .toggle-label {
+    background-image: url('../assets/vendedor.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 20% center;
+    transition: background-image 0.8s ease;
 }
+
+#section2 {
+    display: none; /* Ocultar la segunda sección por defecto */
+}
+
 
 /* Mostrar la segunda sección si el toggle está activado */
 .toggle-input:checked ~ #section2 {
@@ -166,25 +200,31 @@ import vector3 from '../assets/vector3.png'
     display: none;
 }
 
-.title-section p {
-    font-size: 25px; /* Tamaño de la fuente */
-    color: rgb(44, 44, 44); /* Color del texto */
-
-    /* Estilos para posicionar el texto en un lugar específico de la pantalla */
-    position: absolute; /* Establece la posición absoluta */
-    top: 1698px; /* Distancia desde la parte superior */
-    left: 45%; /* Alinea el texto en el centro horizontalmente */
-    transform: translateX(-50%); /* Centra el texto horizontalmente */
+.title-section {
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
-.title-section .admin {
-    font-size: 25px; /* Tamaño de la fuente */
-    color: rgb(44, 44, 44); /* Color del texto */
-
-    /* Estilos para posicionar el texto en un lugar específico de la pantalla */
-    position: absolute; /* Establece la posición absoluta */
-    top: 1698px; /* Distancia desde la parte superior */
-    left: 56%; /* Alinea el texto en el centro horizontalmente */
-    transform: translateX(-50%); /* Centra el texto horizontalmente */
+/* Estilos para el título "Usuario" */
+.user-title {
+    text-align: center;
+    font-weight: bold;
+    color: #000000; /* Color para Usuario */
+    
 }
+
+/* Estilos para el título "Vendedor" */
+.admin-title {
+    text-align: center;
+    font-weight: bold;
+    color: #000000; /* Color para Vendedor */
+}
+
+@media (max-width:700px) {
+    .toggle-label {
+        top: 30px;
+    }
+}
+
 </style>

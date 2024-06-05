@@ -1,0 +1,218 @@
+---
+import Logo from '../assets/banner.png'
+import Alfredo from '../assets/Alfredo.jpg'
+import Angel from '../assets/Angel.jpg'
+import Azarel from '../assets/Azarel.jpg'
+import Sebas from '../assets/Sebas.jpg'
+import Miguel from '../assets/Miguel.jpg'
+---
+
+<section class="team-section">
+    <h2 class="section-title"><b>Nuestro equipo de desarrollo</b></h2>
+    <div class="team-members">
+      <div class="team-member">
+        <img src={Alfredo} alt="Nombre del colaborador">
+        <div class="overlay">
+          <h3 class="member-name"><b>Alfredo Vasquez Lopez</b></h3>
+          <p class="member-position"><b>Full-stack developer</b></p>
+          <p class="member-description">Diseño arquitectura general, enfocándome en la escalabilidad y el rendimiento.</p>
+          <p class="member-links">
+            <a href="https://github.com/DominusDrow">GitHub</a> |
+            <a href="https://www.linkedin.com/in/dominusdrow">LinkedIn</a>
+          </p>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src={Angel} alt="Nombre del colaborador">
+        <div class="overlay">
+            <h3 class="member-name"><b>Luis Avendaño Avalos</b></h3>
+          <p class="member-position"><b>Full-stack developer</b></p>
+          <p class="member-description">Diseño, implementación y funcionalidad de la UI.</p>
+          <p class="member-links">
+            <a href="https://github.com/kaquka">GitHub</a> |
+            <a href="https://www.linkedin.com/in/angel-avenda%C3%B1o-avalos/">LinkedIn</a>
+          </p>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src={Azarel} alt="Nombre del colaborador">
+        <div class="overlay">
+            <h3 class="member-name"><b>Azarel Pazos Quezada</b></h3>
+          <p class="member-position"><b>Full-stack developer</b></p>
+          <p class="member-description"> Backend y funcionalidades en la app.</p>
+          <p class="member-links">
+            <a href="https://github.com/FatKat-zzz">GitHub</a> |
+            <a href="https://www.linkedin.com/in/azarel-pazos/">LinkedIn</a>
+          </p>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src={Sebas} alt="Nombre del colaborador">
+        <div class="overlay">
+            <h3 class="member-name"><b>Sebastian Corro Castellanos</b></h3>
+          <p class="member-position"><b>Full-stack developer</b></p>
+          <p class="member-description">Modelado de base de datos y backend.</p>
+          <p class="member-links">
+            <a href="https://github.com/scorroc">GitHub</a> |
+            <a href="https://www.linkedin.com/in/sebastian-corro">LinkedIn</a>
+          </p>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src={Miguel} alt="Nombre del colaborador">
+        <div class="overlay">
+            <h3 class="member-name"><b>Miguel Márquez Aranda</b></h3>
+          <p class="member-position"><b>Full-stack developer</b></p>
+          <p class="member-description">Frontend y diseño de la página web.</p>
+          <p class="member-links">
+            <a href="https://github.com/Miguelodon1379">GitHub</a> |
+            <a href="https://www.linkedin.com/in/miguel-angel-m%C3%A1rquez-7a2720304/">LinkedIn</a>
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+
+<style lang="scss">
+
+.team-section {
+  text-align: center;
+  margin-top: 4vw; /* Margen superior en relación con el ancho de la pantalla */
+  margin-bottom: 2vw;
+  background-color: #2c3842fd;
+  padding: 8vw 0;
+}
+
+.section-title {
+  font-size: 3vw; /* Tamaño del título en relación con el ancho de la pantalla */
+  color: rgb(255, 255, 255);
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 5vw; /* Margen superior en relación con el ancho de la pantalla */
+}
+
+.team-member {
+  margin: 2vw; /* Margen entre colaboradores en relación con el ancho de la pantalla */
+  position: relative;
+  width: 15%; /* Ancho de cada colaborador en relación con el ancho de la pantalla */
+}
+
+.team-member img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 70%;
+  left: 4%;
+  width: 65%;
+  height: 50%; /* Posicion del texto */
+  background-color: #ffffff;
+  padding: 2vw; /* Espaciado dentro del panel en relación con el ancho de la pantalla */
+  display: flex; /* Usa flexbox para centrar el contenido verticalmente */
+  flex-direction: column; /* Alinea el contenido en columnas */
+  justify-content: center; /* Centra verticalmente el contenido */
+  font-size: 1em;
+}
+
+.member-name {
+  font-size: 1.2vw; /* Tamaño del nombre del colaborador en relación con el ancho de la pantalla */
+  line-height: 1.7;
+  margin-bottom: 0.5vw; /* Margen inferior del nombre del colaborador en relación con el ancho de la pantalla */
+}
+
+.member-position {
+  font-size: 1em; /* Tamaño del cargo del colaborador en relación con el ancho de la pantalla */
+  line-height: 1.7;
+  margin-bottom: 0.5vw; /* Margen inferior del cargo del colaborador en relación con el ancho de la pantalla */
+  color:#ff5858
+}
+
+.member-description {
+  font-size: 0.8vw; /* Tamaño del texto de descripción en relación con el ancho de la pantalla */
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 0.5vw; /* Margen inferior del texto de descripción en relación con el ancho de la pantalla */
+}
+
+.member-links a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 0.7vw; /* Tamaño de los enlaces en relación con el ancho de la pantalla */
+  background-color: rgb(223, 223, 223);
+  line-height: 1.7;
+}
+
+.member-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+
+  .section-title {
+    font-size: 8vw; /* Tamaño del título en relación con el ancho de la pantalla */
+    color: rgb(255, 255, 255);
+  }
+  
+  .team-members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20vw; /* Margen superior en relación con el ancho de la pantalla */
+  }
+
+  .team-member {
+    margin: 20vw 0;  
+    position: relative;
+    width: 80%; /* Ancho de cada colaborador en relación con el ancho de la pantalla */
+  }
+
+  .member-name {
+    margin-bottom: 0;  
+    font-size: 1.3em; /* Tamaño del nombre del colaborador en relación con el ancho de la pantalla */
+  }
+
+  .member-position {
+    font-size: 1.2em; /* Tamaño del cargo del colaborador en relación con el ancho de la pantalla */
+    color:#ff5858;
+    margin-bottom: 7vw;  
+    
+  }
+
+  .member-description {
+    font-size: 1em; /* Tamaño del texto de descripción en relación con el ancho de la pantalla */
+    text-align: justify;
+    margin-bottom: 5vw; /* Margen inferior del texto de descripción en relación con el ancho de la pantalla */
+  }
+
+  .member-links a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 3vw; /* Tamaño de los enlaces en relación con el ancho de la pantalla */
+
+  }
+
+  .overlay {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    width: 75%;
+    height: 50%;
+    background-color: #ffffff;
+    padding: 2vw; /* Espaciado dentro del panel en relación con el ancho de la pantalla */
+    display: flex; /* Usa flexbox para centrar el contenido verticalmente */
+    flex-direction: column; /* Alinea el contenido en columnas */
+    justify-content: center; /* Centra verticalmente el contenido */
+    font-size: 1em;
+ }
+}
+
+</style>

@@ -7,57 +7,64 @@ import google from '../assets/badge.png'
 ---
 
 
-<section class="product-hero">
+<section class="product-hero centered">
     <div class="container">
-       <div class="row">
-           <div class="one-half column">
-              <div class="d-cell">
-               <h1 class="h1-title">Conectando a tráves de la <span>comida.</span></h1>
-               <div class="content">
-                   <p>Nosotros somos uHungry? </p>
-                   <p>uHungry? es una aplicación que simplifica la compra de comida entre particulares o puestos ambulantes. 
-                     Conecta a la comunidad estudiantil y al público en general, permitiéndoles comprar y vender alimentos de forma segura. 
-                     Lo que nos hace únicos es que cada vendedor tiene un apartado llamado "causa", donde explican por qué venden comida, ya sea para financiar estudios,
-                     apoyar una causa benéfica, emprender un negocio o por pasión. Esto crea conexiones auténticas y significativas entre compradores y vendedores.</p>
-                    <a href="#" class="google-play-button"></a>
-               </div>
-              </div>
-           </div>
-           <div class="one-half column hero-media">
-               <img src={Showcase} class="u-full-width" alt="Hero illustrator"  style="position: absolute; width: 80%; ">
-               
-       </div>
+        <div class="row">
+            <div class="one-half column">
+                <div class="d-cell">
+                    <h1 class="h1-title">Conectando a través de la <span>comida.</span></h1>
+                    <div class="content">
+                        <p>Nosotros somos uHungry?</p>
+                        <p>uHungry? es una aplicación que simplifica la compra de comida entre particulares o puestos ambulantes. 
+                            Conecta a la comunidad estudiantil y al público en general, permitiéndoles comprar y vender alimentos de forma segura. 
+                            Lo que nos hace únicos es que cada vendedor tiene un apartado llamado "causa", donde explican por qué venden comida, ya sea para financiar estudios,
+                            apoyar una causa benéfica, emprender un negocio o por pasión. Esto crea conexiones auténticas y significativas entre compradores y vendedores.</p>
+                        <a href="#" class="google-play-button"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="one-half column hero-media">
+                <img src={Showcase} class="u-full-width" alt="Hero illustrator">
+            </div>
+        </div>
     </div>
 </section>
 
+
+
 <style lang="scss">
 
-.product-hero{
+.product-hero {
     padding: 50px 0;
-    margin-bottom: 200px; 
-    .one-half{
+    .one-half {
         display: table;
-        height: 400px;
         margin-bottom: 40px;
-        .d-cell{
+        .d-cell {
             display: table-cell;
             vertical-align: middle;
         }
     }
-    .hero-media{
+    .hero-media {
         position: relative;
-        img:not(.u-full-width){
+        img:not(.u-full-width) {
             width: 80px;
             position: absolute;
             left: 20px;
             bottom: 0;
         }
-      }
-      .resized-image {
-            width: 70%;
-            height: auto;
-        }
+    }
+    .resized-image {
+        width: 70%;
+        height: auto;
+    }
+    .product-hero.centered {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
+
 
 .google-play-button {
   display: inline-block;

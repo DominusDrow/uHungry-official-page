@@ -6,19 +6,20 @@ import ambulante from '../assets/ambulante.jpg'
 import cafeteria from '../assets/cafeteria.jpg'
 import puesto from '../assets/puesto.jpg'
 ---
-<section class="title-section">
-    <h1><b>¿Que puedes encontrar en nuestra app?</b></h1>
+<section class="title-section centered">
+    <h1><b>¿Qué puedes encontrar en nuestra app?</b></h1>
 </section>
 
-<section class="testimony">
+
+<section class="testimony centered">
     <div class="testimony__container container">
         <img src={leftarrow} alt="flecha" class="testimony__arrow" id="before">
 
         <section class="testimony__body testimony__body--show" data-id="1">
             <div class="testimony__texts">
-                <h2 class="subtitle">Cafeterías <span class="testimony__course">Dentro
+                <h2 class="subtitle"><b>Cafeterías</b><span class="testimony__course">Dentro
                         de Ciudad Universitaria.</span></h2>
-                <p class="testimony__review">En está aplicación podrás comprar y consultar precios de todas las 
+                <p class="testimony__review" style="font-size: 1.2em;">En está aplicación podrás comprar y consultar precios de todas las 
                     cafeterías que se encuentren dentro de C.U.
                 </p>
             </div>
@@ -30,9 +31,9 @@ import puesto from '../assets/puesto.jpg'
 
         <section class="testimony__body" data-id="2">
             <div class="testimony__texts">
-                <h2 class="subtitle">Puestos <span class="testimony__course">En el
+                <h2 class="subtitle"><b>Puestos</b><span class="testimony__course">En el
                         pabellón Universitario.</span></h2>
-                <p class="testimony__review">En está aplicación podrás encontrar de manera sencilla a todos los estudiantes que tienen un puesto
+                <p class="testimony__review" style="font-size: 1.2em;">En está aplicación podrás encontrar de manera sencilla a todos los estudiantes que tienen un puesto
                     en el pabellón universitario, podrás consultar lo que venden y los diversos precios que ofrecen.
                 </p>
             </div>
@@ -44,8 +45,8 @@ import puesto from '../assets/puesto.jpg'
 
         <section class="testimony__body" data-id="3">
             <div class="testimony__texts">
-                <h2 class="subtitle">Comerciantes Ambulantes <span class="testimony__course">Estudiantes.</span></h2>
-                <p class="testimony__review">En está aplicación podrás ver lo que ofrece la comunidad estudiantil,
+                <h2 class="subtitle"><b>Comerciantes Ambulantes</b><span class="testimony__course">Estudiantes.</span></h2>
+                <p class="testimony__review" style="font-size: 1.2em;">En está aplicación podrás ver lo que ofrece la comunidad estudiantil,
                     tanto los que venden comida y no puedierón conseguir un lugar en el pabellón, como los que están
                     iniciando un emprendimiento.
                 </p>
@@ -96,8 +97,6 @@ import puesto from '../assets/puesto.jpg'
 </script>
 
 <style lang="scss">
-
-
 .fine-section{
     background-color: var(--accent);
     .container{
@@ -140,19 +139,17 @@ import puesto from '../assets/puesto.jpg'
     }
  }
 
- @media (max-width:700px) {
-    .flex{
-        flex-direction: column;
-        .circular-image{
-            position: relative;
-        }
-    }
- }
 
 /* Testimony */
 
 .testimony{
     background-color: #0e70cc9f;
+}
+
+.testimony.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .testimony__container{
@@ -196,8 +193,8 @@ import puesto from '../assets/puesto.jpg'
 }
 
 .testimony__course{
-    background-color: rgb(230, 157, 157);
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color: #818181;
     display: inline-block;
     padding: 5px;
 }
@@ -210,5 +207,42 @@ import puesto from '../assets/puesto.jpg'
 .title-section {
     text-align: center;
 }
+
+.title-section.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:700px) {
+    
+    .testimony__container {
+        margin: 0 auto; /* Ajustamos el centrado horizontal */
+    }
+
+    .testimony__body {
+        grid-template-columns: 1fr; /* Cambiamos a una sola columna para el texto e imagen */
+        justify-content: center; /* Centramos horizontalmente el contenido */
+        text-align: center; /* Centramos el texto */
+    }
+
+    .testimony__texts {
+        margin-bottom: 20px; /* Agregamos un margen inferior para separar el texto de la imagen */
+    }
+
+    .testimony__img {
+        width: 120%; /* Ajustamos el ancho de la imagen para que se ajuste al contenedor */
+        height: auto; /* Permitimos que la altura se ajuste automáticamente */
+        max-width: 200px; /* Limitamos el ancho máximo de la imagen para evitar que sea demasiado grande */
+    }
+
+    .testimony__arrow {
+        width: 60px; /* Reducimos el tamaño de las flechas */
+        height: auto; /* Permitimos que la altura se ajuste automáticamente */
+        margin-top: 20px;
+        align-self: center; /* Centramos verticalmente las flechas */
+    }
+}
+
 
 </style>
